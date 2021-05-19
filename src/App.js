@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.scss";
 import Pagination from "./components/Pagination";
+import PostFilterForm from "./components/PostFilterForm";
 import PostList from "./components/PostList";
 import queryString from "query-string";
 
@@ -10,7 +11,6 @@ function App() {
     { id: 2, title: "Tennis" },
     { id: 3, title: "Volleyball" },
   ]);
-
   const [postList, setPostList] = useState([]);
   const [pagination, setPagination] = useState({
     _page: 1,
@@ -70,9 +70,20 @@ function App() {
     newTodoList.push(newTodo);
     setTodoList(newTodoList);
   };
+
+  const handleFiltersChange = (newFilters) => {
+    console.log("New filters: ", newFilters);
+    setFilters({
+      ...filters,
+      _page: 1,
+      title_like: newFilters.searchTerm,
+    });
+  };
+
   return (
     <div className="App">
       <h2>Welcome to React Hooks</h2>
+      <PostFilterForm onSubmit={handleFiltersChange} />
       <PostList posts={postList} />
       <Pagination pagination={pagination} onPageChange={handlePageChange} />
       {/* <ColorBox />
