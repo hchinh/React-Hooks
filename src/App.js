@@ -87,9 +87,9 @@ function App() {
       <h1>Welcome to React Hooks</h1>
       {showClock && <Clock />}
       <button onClick={() => setShowClock(false)}>Hide Clock</button>
-      <PostFilterForm onSubmit={handleFiltersChange} />
+      {/* <PostFilterForm onSubmit={handleFiltersChange} />
       <PostList posts={postList} />
-      <Pagination pagination={pagination} onPageChange={handlePageChange} />
+      <Pagination pagination={pagination} onPageChange={handlePageChange} /> */}
       {/* <ColorBox />
       <TodoForm onSubmit={handleTodoFormSubmit} />
       <TodoList todos={todoList} onTodoClick={handleTodoClick} /> */}
