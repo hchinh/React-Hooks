@@ -5,6 +5,7 @@ import PostFilterForm from "./components/PostFilterForm";
 import PostList from "./components/PostList";
 import queryString from "query-string";
 import Clock from "./components/Clock";
+import MagicBox from "./components/MagicBox";
 
 function App() {
   const [todoList, setTodoList] = useState([
@@ -85,8 +86,9 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to React Hooks</h1>
-      {showClock && <Clock />}
-      <button onClick={() => setShowClock(false)}>Hide Clock</button>
+      <MagicBox />
+      {/* {showClock && <Clock />}
+      <button onClick={() => setShowClock(false)}>Hide Clock</button> */}
       {/* <PostFilterForm onSubmit={handleFiltersChange} />
       <PostList posts={postList} />
       <Pagination pagination={pagination} onPageChange={handlePageChange} /> */}
